@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Paarth Kapur</title>
+    <link rel="stylesheet" href="assets/style.css">
+    
+    <style>
+        .pub-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pub-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .pub-card:hover {
+            border-color:#0082d8;;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .pub-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.4rem;
+            color: #1a202c;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .pub-meta-preview {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.4rem;
+            font-weight: 500;
+        }
+
+        .pub-tags {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .pub-tag {
+            font-size: 0.75rem;
+            background: #eef2ff;
+            color: #0082d8;;
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .hidden-details {
+            display: none;
+        }
+
+        .modal-overlay {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.6); 
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: #94a3b8;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #ef4444; 
+        }
+
+        .modal-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.8rem;
+            color: #1a202c;
+            margin: 0 0 0.5rem 0;
+            padding-right: 2rem;
+        }
+
+        .modal-meta {
+            color: #0082d8;;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .modal-desc {
+            color: #4a5568;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .modal-desc p {
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+        }
+
+        .tech-stack {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #334155;
+            border-left: 4px solid #0082d8;
+        }
+
+        .tech-stack strong {
+            color: #1e293b;
+        }
+
+        .modal-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffffff;
+            background-color: #4338ca;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .modal-link:hover {
+            background-color: #3730a3;
+        }
+
+        @media (max-width: 768px) {
+            .pub-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .pub-tags {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="side-left reveal">
+        <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank" title="LinkedIn">in</a>
+        <a href="#" target="_blank" title="GitHub">gh</a>
+    </div>
+
+    <div class="side-right reveal">
+        <a href="mailto:paarthkapur@gmail.com" class="vertical-text">paarthkapur@gmail.com</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><a href="index.html">Paarth Kapur</a></h1>
+            <nav>
+                <a href="index.html">About</a>
+                <a href="experience.html">Experience & Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="publications.html">Publications</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header reveal">
+                <h2>Publications & Research</h2>
+                <p>Published papers and technical research</p>
+            </div>
+
+            <div class="pub-list">
+                
+                <div class="pub-card reveal" onclick="openModal(this)">
+                    <div>
+                        <h3 class="pub-title">Towards Explainable Neural Networks</h3>
+                        <div class="pub-meta-preview">Springer | Oct 2025</div>
+                    </div>
+                    <div class="pub-tags">
+                        <span class="pub-tag">Explainable AI</span>
+                        <span class="pub-tag">CNN</span>
+                        <span class="pub-tag">Computer Vision</span>
+                    </div>
+                    
+                    <div class="hidden-details">
+                        <div class="meta-data">Springer | Oct 2025</div>
+                        <div class="desc-data">
+                            <p>To address the 'black box' nature of clinical CNN models, I pivoted my research focus towards Explainable Artificial Intelligence (XAI). I implemented a custom Layer-wise Relevance Propagation (LRP) mechanism integrated with the VGG16 architecture. </p>
+                            <p>Through this, I successfully generated pixel-level visualizations that explicitly highlighted the specific regions contributing most to the model's predictions. I also integrated real-time video preprocessing to ensure greater transparency in these models. Ultimately, I aimed to create effective, transparent AI systems for high-stakes sectors like healthcare. </p>
+                            <div class="tech-stack">
+                                <strong>Tech Stack & Concepts:</strong> Explainable AI (XAI), Layer-wise Relevance Propagation (LRP), VGG16 Architecture, Convolutional Neural Networks (CNNs), Computer Vision.
+                            </div>
+                            <a href="https://www.researchgate.net/" target="_blank" class="modal-link">View on ResearchGate &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-card reveal" onclick="openModal(this)">
+                    <div>
+                        <h3 class="pub-title">Lung Cancer Detection Using Medical Image Processing</h3>
+                        <div class="pub-meta-preview">Springer | Oct 2025</div>
+                    </div>
+                    <div class="pub-tags">
+                        <span class="pub-tag">Medical Imaging</span>
+                        <span class="pub-tag">ResNet50</span>
+                        <span class="pub-tag">DenseNet201</span>
+                    </div>
+
+                    <div class="hidden-details">
+                        <div class="meta-data">Springer | Oct 2025</div>
+                        <div class="desc-data">
+                            <p>Focusing on healthcare AI, I developed an EfficientNetB3 model specifically tailored for detecting lung cancer from CT scans. I rigorously benchmarked the performance of this model against a hybrid ResNet50-DenseNet201 architecture. </p>
+                            <p>My proposed model achieved a superior classification accuracy of 94.29 percent, significantly enhancing early clinical detection capabilities. This work underlined the substantial potential of deep learning methodologies I applied in providing earlier and more reliable disease diagnoses. </p>
+                            <div class="tech-stack">
+                                <strong>Tech Stack & Concepts:</strong> Deep Learning, EfficientNetB3, ResNet50, DenseNet201, Medical Image Processing (CT Scans), Classification Benchmarking.
+                            </div>
+                            <a href="https://www.researchgate.net/" target="_blank" class="modal-link">View on ResearchGate &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-card reveal" onclick="openModal(this)">
+                    <div>
+                        <h3 class="pub-title">Leveraging Swin Transformer for Robust Object Detection</h3>
+                        <div class="pub-meta-preview">IEEE | Jul 2025</div>
+                    </div>
+                    <div class="pub-tags">
+                        <span class="pub-tag">Autonomous Vehicles</span>
+                        <span class="pub-tag">Swin Transformer</span>
+                        <span class="pub-tag">Object Detection</span>
+                    </div>
+
+                    <div class="hidden-details">
+                        <div class="meta-data">IEEE | Jul 2025</div>
+                        <div class="desc-data">
+                            <p>In this independent research initiative, I tested how advanced architectures hold up under real-world, challenging conditions. I rigorously compared transformer-based models against traditional CNN object detectors in the context of autonomous driving. </p>
+                            <p>I was responsible for benchmarking critical performance metrics, including accuracy, robustness, and real-time efficiency. Through my experimental design and in-depth model analysis, I established that Swin Transformers consistently outperformed traditional models when subjected to noise, motion blur, and harsh weather distortions. </p>
+                            <div class="tech-stack">
+                                <strong>Tech Stack & Concepts:</strong> Swin Transformers, Convolutional Neural Networks (CNNs), Object Detection, Computer Vision, Autonomous Systems, Performance Benchmarking.
+                            </div>
+                            <a href="https://www.researchgate.net/" target="_blank" class="modal-link">View on ResearchGate &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-card reveal" onclick="openModal(this)">
+                    <div>
+                        <h3 class="pub-title">Transforming College Counseling</h3>
+                        <div class="pub-meta-preview">IEEE | Mar 2023</div>
+                    </div>
+                    <div class="pub-tags">
+                        <span class="pub-tag">Web Dev</span>
+                        <span class="pub-tag">Mobile App</span>
+                        <span class="pub-tag">UI/UX</span>
+                    </div>
+
+                    <div class="hidden-details">
+                        <div class="meta-data">IEEE | Mar 2023</div>
+                        <div class="desc-data">
+                            <p>After my university surveys revealed that eighty percent of students were unaware of on-campus mental health services, I launched this initiative to bridge the gap between awareness and action. By gathering qualitative feedback directly from counselors and students, I designed and developed an intuitive web and mobile application. </p>
+                            <p>I built the platform to enable students to easily book counseling sessions. To foster a safe and judgment-free environment, I incorporated features for anonymous story sharing, integrated podcasts, and motivational resources into the application. </p>
+                            <div class="tech-stack">
+                                <strong>Tech Stack & Concepts:</strong> Web Development, Mobile Application Development, UI/UX, User-Centered Design, Qualitative Data Integration.
+                            </div>
+                            <a href="https://www.researchgate.net/" target="_blank" class="modal-link">View on ResearchGate &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="reveal">
+            <div>
+                <a href="mailto:paarthkapur@gmail.com">paarthkapur@gmail.com</a> | 
+                <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="pubModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModalBtn()">×</span>
+            <h2 id="modalTitle" class="modal-title">Title</h2>
+            <div id="modalMeta" class="modal-meta">Publisher | Date</div>
+            <div id="modalDesc" class="modal-desc">Description goes here...</div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(cardElement) {
+            const title = cardElement.querySelector('.pub-title').innerText;
+            const meta = cardElement.querySelector('.hidden-details .meta-data').innerText;
+            
+            // Replaces HTML entirely, dropping the invisible comments so they never appear
+            const descHTML = cardElement.querySelector('.hidden-details .desc-data').innerHTML;
+
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalMeta').innerText = meta;
+            document.getElementById('modalDesc').innerHTML = descHTML;
+
+            const modal = document.getElementById('pubModal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+
+        function closeModal(event) {
+            if (event.target.id === 'pubModal') {
+                closeModalAction();
+            }
+        }
+
+        function closeModalBtn() {
+            closeModalAction();
+        }
+
+        function closeModalAction() {
+            const modal = document.getElementById('pubModal');
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+    </script>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+
+   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#1668b6" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.6, "random": false },
+                "size": { "value": 3.7, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#cbd5e1",
+                    "opacity": 0.5,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 180, "line_linked": { "opacity": 0.8 } },
+                    "push": { "particles_nb": 3 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

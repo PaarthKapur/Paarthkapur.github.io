@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Paarth Kapur</title>
+    <link rel="stylesheet" href="assets/style.css">
+    
+    <style>
+        /* Specific Logic for Tabs */
+        .tab-content {
+            display: none; 
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block; 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Active State for Filter Buttons (Overrides style.css slightly for this page) */
+        .filter-btn.active {
+            background: #0082d8;
+            color: #ffffff;
+            border-color: #0082d8;
+        }
+
+        .tab-description {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4a5568;
+            text-align: center;
+        }
+        
+        /* Cursor pointer for clickable cards */
+        .timeline-card {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="side-left reveal">
+        <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank" title="LinkedIn">in</a>
+        <a href="#" target="_blank" title="GitHub">gh</a>
+    </div>
+
+    <div class="side-right reveal">
+        <a href="mailto:paarthkapur@gmail.com" class="vertical-text">paarthkapur@gmail.com</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><a href="index.html">Paarth Kapur</a></h1>
+            <nav>
+                <a href="index.html">About</a>
+                <a href="experience.html">Experience & Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="publications.html">Publications</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header reveal">
+                <h2>Experience & Education</h2>
+            </div>
+
+            <div class="filter-container reveal">
+                <button class="filter-btn active" onclick="switchTab('professional', event)">Professional</button>
+                <button class="filter-btn" onclick="switchTab('education', event)">Education</button>
+                <button class="filter-btn" onclick="switchTab('research', event)">Research</button>
+                <button class="filter-btn" onclick="switchTab('volunteer', event)">Volunteering</button>
+            </div>
+
+            <div id="professional" class="tab-content active">
+                <p class="tab-description reveal">
+                    My corporate journey is all about turning raw data into real-world efficiency. At companies like Tata Play and Colgate, I've focused on automating heavy workflows, building profitability models, and optimizing supply chains.
+                </p>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Business Analyst</h3>
+                                    <span class="date-pill">Sep 2024 - Current</span>
+                                </div>
+                                <h4 class="company">Tata Play Pvt Ltd</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Spearheading revenue assurance initiatives by automating complex profitability models and deriving actionable insights from high-volume customer data.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Lead the end-to-end execution of a subscriber-level profitability model, managing complex SQL scripts and PostgreSQL databases to validate financial flows and drive strategic revenue assurance decisions.</li>
+                                            <li>Developed a predictive ensemble AI model to distinguish between temporary payment failures and genuine churn risk, enabling targeted retention strategies and recovering revenue from approximately 800,000 customers.</li>
+                                            <li>Engineered automation scripts using Python and Selenium that slashed monthly reporting effort by 75% and reduced high-volume data entry processing time by 83%.</li>
+                                            <li>Designed and delivered business-critical BI reports, including a daily subscriber burn rate tracker, to enhance executive visibility into customer attrition trends.</li>
+                                            <li>Implemented NLP models to classify customer feedback by sentiment and issue type, transforming unstructured text into actionable insights for the operations team.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#tata-profitability" class="similar-link">
+                                            <h5>Profitability Automation</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                        <a href="projects.html#tata-sentiment" class="similar-link">
+                                            <h5>Customer Sentiment NLP</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                        <a href="projects.html#tata-churn" class="similar-link">
+                                            <h5>Predictive Churn Model</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Power BI</span>
+                                        <span class="tech-pill">Power Automate</span>
+                                        <span class="tech-pill">SQL</span>
+                                        <span class="tech-pill">PostgreSQL</span>
+                                        <span class="tech-pill">Python</span>
+                                        <span class="tech-pill">Selenium</span>
+                                        <span class="tech-pill">Pentaho (Spoon)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Data Analyst</h3>
+                                    <span class="date-pill">Jan 2024 - Jun 2024</span>
+                                </div>
+                                <h4 class="company">Colgate Global Business Solutions</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Optimized APAC supply chain operations by developing data-driven reporting frameworks on Snowflake and integrating disparate data sources.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Served as a key member of the APAC Scrum Team, utilizing Snowflake SQL to optimize critical supply chain processes across Material Master, Sales, and Forecasting domains.</li>
+                                            <li>Architected a comprehensive Stock Availability Report in DOMO that consolidated real-time sales and inventory data from multiple regions, integrating complex supply-demand logic and safety stock thresholds.</li>
+                                            <li>Built a low-code Outsystems prototype to bridge SAP data with external web applications, significantly enhancing operational data accessibility for non-technical users.</li>
+                                            <li>Ensured data integrity for supply chain decision-making by validating KPIs, reconciling cross-system discrepancies, and managing rigorous monthly data refresh cycles.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#colgate-supply-chain" class="similar-link">
+                                            <h5>Stock Availability Report</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Snowflake (SQL)</span>
+                                        <span class="tech-pill">DOMO</span>
+                                        <span class="tech-pill">Sigma</span>
+                                        <span class="tech-pill">SAP</span>
+                                        <span class="tech-pill">Outsystems</span>
+                                        <span class="tech-pill">Airflow</span>
+                                        <span class="tech-pill">DBT</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/031c804c-4670-4653-adac-1c8c527d5c6f_thumb.jpg" alt="Mobicule"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Programmer Analyst</h3>
+                                    <span class="date-pill">Jun 2023 - Jul 2023</span>
+                                </div>
+                                <h4 class="company">Mobicule Technologies Netrascan</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Engineered automated security solutions using computer vision and deep learning to detect and mask sensitive information in real-time.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Developed a robust Python and Flask application integrating custom CNN models to automatically detect and pixel-perfectly mask sensitive information (PII) in user-uploaded documents, handling varied image orientations.</li>
+                                            <li>Owned the full DevOps lifecycle from planning to deployment, ensuring a secure and streamlined workflow for the application.</li>
+                                            <li>Wrote efficient Python scripts for data pipelining, cleaning, and process automation, which improved data processing efficiency and reduced manual compliance efforts.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#mobicule-masker" class="similar-link">
+                                            <h5>Sensitive Info Masker</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Python</span>
+                                        <span class="tech-pill">Flask</span>
+                                        <span class="tech-pill">Deep Learning (CNN)</span>
+                                        <span class="tech-pill">Data Analysis</span>
+                                        <span class="tech-pill">DevOps</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="education" class="tab-content">
+                <p class="tab-description">
+                    My academic foundation is built on a rigorous Information Technology curriculum, elevated by a specialized Honors program in Artificial Intelligence.
+                </p>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>B.Tech in Information Technology</h3>
+                                    <span class="date-pill">2020 - 2024</span>
+                                </div>
+                                <h4 class="company">K. J. Somaiya College of Engineering</h4>
+                                <p class="location">Mumbai • CGPA: 9.64/10</p>
+                                <p class="description">
+                                    Specialized in Artificial Intelligence with a strong focus on data science, machine learning, and advanced algorithms.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Academic Overview</h4>
+                                        <p>
+                                            Graduated with distinction and a <strong>CGPA of 9.64/10</strong>, securing an Honors degree in Artificial Intelligence. My undergraduate journey was defined by a transition from foundational IT concepts to advanced research in deep learning and computer vision.
+                                        </p>
+                                        
+                                        <h4>Key Coursework</h4>
+                                        <ul>
+                                            <li><strong>AI & Data Science:</strong> Deep Learning, Machine Learning, Natural Language Processing (NLP), Computer Vision, Big Data Analytics.</li>
+                                            <li><strong>Core Computer Science:</strong> Data Structures & Algorithms, Database Management Systems (DBMS), Operating Systems, Computer Networks, Cloud Computing.</li>
+                                            <li><strong>Mathematics:</strong> Linear Algebra, Probability & Statistics, Calculus, Discrete Mathematics.</li>
+                                        </ul>
+
+                                        <h4>Key Learnings</h4>
+                                        <ul>
+                                            <li><strong>Theoretical Depth:</strong> Mastered the mathematical foundations behind ML algorithms (optimization, backpropagation) rather than just relying on pre-built libraries.</li>
+                                            <li><strong>Research Methodology:</strong> Learned to critique academic papers and conduct independent research, culminating in multiple publications at IEEE and Springer conferences.</li>
+                                            <li><strong>Human-Centric AI:</strong> Developed a philosophy that AI must be explainable (XAI) and socially responsible, influenced by my work on medical imaging and detecting biases in data.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#explainable-ai" class="similar-link"><h5>Explainable AI (LRP)</h5><span>Research</span></a>
+                                        <a href="projects.html#lung-cancer" class="similar-link"><h5>Lung Cancer Detection</h5><span>Research</span></a>
+                                        <a href="projects.html#counseling-app" class="similar-link"><h5>Counseling Platform</h5><span>UI/UX & Web</span></a>
+                                        <a href="projects.html#bus-booking" class="similar-link"><h5>Bus Booking System</h5><span>Academic</span></a>
+                                        <a href="projects.html#bakery-website" class="similar-link"><h5>Bakery Website</h5><span>Academic</span></a>
+                                        <a href="projects.html#colour-quantization" class="similar-link"><h5>Colour Quantization</h5><span>Academic</span></a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Artificial Intelligence</span>
+                                        <span class="tech-pill">Data Structures</span>
+                                        <span class="tech-pill">Machine Learning</span>
+                                        <span class="tech-pill">NLP</span>
+                                        <span class="tech-pill">Computer Vision</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="research" class="tab-content">
+                <p class="tab-description">
+                    During my undergrad, I explored deep learning for thermal image classification and geospatial analysis, driven by a fascination with solving critical challenges using AI.
+                </p>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Technical Intern - ArcGIS & Machine Learning</h3>
+                                    <span class="date-pill">Sep 2022 - Apr 2023</span>
+                                </div>
+                                <h4 class="company">K. J. Somaiya College of Engineering</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Conducted geospatial analysis and remote sensing research to monitor environmental ecosystems using satellite imagery.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Processed Landsat 8 OLI/TIRS C2 L1 TIF files and applied NDVI to analyze vegetation density and health.</li>
+                                            <li>Implemented remote sensing classification techniques to differentiate wetland and dryland ecosystems using ArcGIS.</li>
+                                            <li>Performed accuracy assessment with stratified random sampling, achieving a classification accuracy of 89.42%.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#wetland-classification" class="similar-link">
+                                            <h5>Wetland Classification</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">ArcGIS</span>
+                                        <span class="tech-pill">Remote Sensing</span>
+                                        <span class="tech-pill">Machine Learning</span>
+                                        <span class="tech-pill">NDVI Analysis</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Technical Intern - Deep Learning</h3>
+                                    <span class="date-pill">Jul 2022 - Apr 2023</span>
+                                </div>
+                                <h4 class="company">K. J. Somaiya College of Engineering</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Researched and implemented advanced computer vision models for precise thermal image classification and defect detection.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Processed thermal images using color transformations, cropping, and thresholding to enhance data quality.</li>
+                                            <li>Built and trained a CNN model with convolutional, pooling, and dense layers for thermal image classification.</li>
+                                            <li>Leveraged ResNet50 as a feature extractor with Region Proposal Network (RPN) and ROI pooling for precise region detection.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#solar-anomaly" class="similar-link">
+                                            <h5>Solar Panel Anomaly</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Deep Learning</span>
+                                        <span class="tech-pill">CNN</span>
+                                        <span class="tech-pill">ResNet50</span>
+                                        <span class="tech-pill">Image Processing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Technical Intern - ArcGIS Data Analysis</h3>
+                                    <span class="date-pill">Jan 2023 - Feb 2023</span>
+                                </div>
+                                <h4 class="company">K. J. Somaiya College of Engineering</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Leveraged Google Earth Engine and QGIS to clean and preprocess large-scale geospatial datasets for accurate spatial analysis.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Utilizing ArcGIS, Google Earth Engine, and QGIS, I extensively worked with geospatial data for data preparation and analysis.</li>
+                                            <li>Facilitated preprocessing and cleaning of geospatial data, ensuring its accuracy and compatibility for further analysis.</li>
+                                            <li>Enabled advanced spatial analysis using specialized tools, extracting valuable insights and visualizing the data effectively.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#arcgis-pipeline" class="similar-link">
+                                            <h5>ArcGIS Data Pipeline</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Google Earth Engine</span>
+                                        <span class="tech-pill">QGIS</span>
+                                        <span class="tech-pill">ArcGIS</span>
+                                        <span class="tech-pill">Geospatial Data</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Technical Intern - Data Analysis</h3>
+                                    <span class="date-pill">Aug 2021 - Nov 2021</span>
+                                </div>
+                                <h4 class="company">K. J. Somaiya College of Engineering</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Built dynamic connectivity graphs using Neo4j and Bokeh to visualize complex website interaction data.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Learned data visualization libraries and utilized them in Python for effective visualization.</li>
+                                            <li>Mastered data sorting methods for efficient data organization.</li>
+                                            <li>Explored Neo4j, a graph database, and used frameworks like Bokeh for graphical data representation and analysis.</li>
+                                            <li>Analysed the data and made a dynamic website connectivity graphs that displayed the various connections of websites.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#connectivity-graph" class="similar-link">
+                                            <h5>Website Connectivity</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Neo4j</span>
+                                        <span class="tech-pill">Bokeh</span>
+                                        <span class="tech-pill">Python</span>
+                                        <span class="tech-pill">Graph Databases</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="volunteer" class="tab-content">
+                <p class="tab-description">
+                    Technology is about empowering people. I've dedicated my time to analyzing healthcare data for NGOs, supporting animal shelters, and teaching coding to students.
+                </p>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/um .jpg" alt="Utkarsha Mandal"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Volunteer Trainer</h3>
+                                    <span class="date-pill">Apr 2024 - Dec 2024</span>
+                                </div>
+                                <h4 class="company">Utkarsha Mandal</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Bridged the digital divide by designing and teaching technical curriculum to underprivileged students.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Conducted interactive training sessions in Microsoft Excel, covering formulae, data organization, and visualization to strengthen students' analytical abilities.</li>
+                                            <li>Taught the fundamentals of Python programming to help students develop essential coding skills.</li>
+                                            <li>Contributed to youth empowerment through technology-driven learning initiatives and skill development.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#utkarsha-training" class="similar-link">
+                                            <h5>Tech Literacy Program</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Teaching</span>
+                                        <span class="tech-pill">Python</span>
+                                        <span class="tech-pill">Excel</span>
+                                        <span class="tech-pill">Communication</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo"><img src="assets/images (1).png" alt="Rotary Club"></div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Volunteer (Animal Shelter)</h3>
+                                    <span class="date-pill">Jun 2024 - Sep 2024</span>
+                                </div>
+                                <h4 class="company">Rotary Club of Bombay Seacoast</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Applied data analysis to streamline shelter operations, improving resource allocation and adoption tracking.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Applied data analysis skills to monitor and track adoption rates for rescued animals.</li>
+                                            <li>Organized medical care records and analyzed resource needs, significantly streamlining shelter operations.</li>
+                                            <li>Contributed to creating a healthier and safer environment for the animals under care.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#rotary-shelter" class="similar-link">
+                                            <h5>Animal Shelter Analysis</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Data Analysis</span>
+                                        <span class="tech-pill">Excel</span>
+                                        <span class="tech-pill">Resource Management</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo">NGO</div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Volunteer (Healthcare Initiatives)</h3>
+                                    <span class="date-pill">May 2024 - Aug 2024</span>
+                                </div>
+                                <h4 class="company">NGO Cell Mumbai</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Analyzed patient outreach metrics to optimize the delivery of medical services to underserved communities.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Applied data analysis techniques to evaluate patient outreach data and monitor overall program efficiency.</li>
+                                            <li>Highlighted critical areas for improvement, providing valuable insights that enabled better resource allocation.</li>
+                                            <li>Supported the efficient delivery of medical services and healthcare initiatives to underserved communities.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <a href="projects.html#ngo-healthcare" class="similar-link">
+                                            <h5>Healthcare Evaluation</h5>
+                                            <span>View Project</span>
+                                        </a>
+                                    </div>
+                                    <div class="skills-content">
+                                        <span class="tech-pill">Data Analysis</span>
+                                        <span class="tech-pill">Logistics</span>
+                                        <span class="tech-pill">Community Outreach</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal(this)">
+                            <div class="card-logo">VP</div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h3>Volunteer (Event Management)</h3>
+                                    <span class="date-pill">Dec 2018 - Dec 2024</span>
+                                </div>
+                                <h4 class="company">Vile Parle Cultural Center</h4>
+                                <p class="location">Mumbai</p>
+                                <p class="description">
+                                    Coordinated logistics and communication for large-scale annual cultural programs.
+                                </p>
+                                <div class="hidden-details">
+                                    <div class="story">
+                                        <h4>Key Responsibilities</h4>
+                                        <ul>
+                                            <li>Coordinated logistics and communication for large-scale annual cultural programs.</li>
+                                            <li>Facilitated smooth event execution through teamwork and stakeholder collaboration.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="similar">
+                                        <span class="similar-link" style="cursor: default; border: none; box-shadow: none;">
+                                            <span>No linked project</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="reveal">
+            <div>
+                <a href="mailto:paarthkapur@gmail.com">paarthkapur@gmail.com</a> | 
+                <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModalBtn()">×</span>
+            
+            <div id="modal-header-content" style="display: flex; align-items: center; gap: 1.5rem;">
+                <div id="modalLogo" class="card-logo" style="width: 70px; height: 70px; flex-shrink: 0; background: #fff; border: 1px solid #e2e8f0;"></div>
+                <div>
+                    <h2 id="modalTitle" class="modal-title" style="margin: 0; padding: 0;">Title</h2>
+                    <h4 id="modalCompany" style="color: #64748b; margin: 0.3rem 0 0 0; font-weight: 500;">Company</h4>
+                </div>
+            </div>
+
+            <div class="modal-body-grid">
+                <div class="project-story" id="modalStory"></div>
+
+                <div class="modal-sidebar">
+                    <div class="sidebar-group">
+                        <div class="sidebar-title">Associated Projects</div>
+                        <div id="modalSimilar"></div>
+                    </div>
+
+                    <div id="modalSkillsSection" class="sidebar-group" style="margin-top: 1.5rem;">
+                        <div class="sidebar-title">Skills & Tools</div>
+                        <div id="modalSkills"></div> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId, event) {
+            let buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            event.target.classList.add('active');
+
+            let contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            let targetContent = document.getElementById(tabId);
+            if(targetContent) {
+                targetContent.classList.add('active');
+            }
+            reveal();
+        }
+
+        // Modal Logic for Experience
+        function openModal(card) {
+            const title = card.querySelector('h3').innerText;
+            const company = card.querySelector('.company').innerText;
+            // Get Logo HTML (whether it's an image or text)
+            const logoHtml = card.querySelector('.card-logo').innerHTML;
+            
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalCompany').innerText = company;
+            document.getElementById('modalLogo').innerHTML = logoHtml;
+
+            const hiddenDetails = card.querySelector('.hidden-details');
+            
+            if (hiddenDetails) {
+                // 1. Set Story
+                document.getElementById('modalStory').innerHTML = hiddenDetails.querySelector('.story').innerHTML;
+                // 2. Set Similar Projects
+                document.getElementById('modalSimilar').innerHTML = hiddenDetails.querySelector('.similar').innerHTML;
+                
+                // 3. Set Skills
+                const skillsDiv = hiddenDetails.querySelector('.skills-content');
+                if (skillsDiv) {
+                    document.getElementById('modalSkillsSection').style.display = 'block';
+                    document.getElementById('modalSkills').innerHTML = '<div class="skills-container">' + skillsDiv.innerHTML + '</div>';
+                } else {
+                    document.getElementById('modalSkillsSection').style.display = 'none';
+                }
+
+            } else {
+                document.getElementById('modalStory').innerHTML = "<p>No further details available.</p>";
+                document.getElementById('modalSimilar').innerHTML = "<span>No projects linked.</span>";
+                document.getElementById('modalSkillsSection').style.display = 'none';
+            }
+
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('show'); }, 10);
+        }
+
+        function closeModal(event) { if (event.target.id === 'projectModal') closeModalAction(); }
+        function closeModalBtn() { closeModalAction(); }
+        function closeModalAction() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('show');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal, .tab-description");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50; 
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100); 
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#1668b6" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.6, "random": false },
+                "size": { "value": 3.7, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#cbd5e1",
+                    "opacity": 0.5,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 180, "line_linked": { "opacity": 0.8 } },
+                    "push": { "particles_nb": 3 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

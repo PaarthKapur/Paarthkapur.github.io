@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Paarth Kapur</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="side-left reveal">
+        <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank" title="LinkedIn">in</a>
+        <a href="#" target="_blank" title="GitHub">gh</a>
+    </div>
+
+    <div class="side-right reveal">
+        <a href="mailto:paarthkapur@gmail.com" class="vertical-text">paarthkapur@gmail.com</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><a href="index.html">Paarth Kapur</a></h1>
+            <nav>
+                <a href="index.html">About</a>
+                <a href="experience.html">Experience & Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="publications.html">Publications</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <h2>Technical Projects</h2>
+                <p>A comprehensive collection of my work across all domains</p>
+            </div>
+
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterProjects('all', event)">All</button>
+                <button class="filter-btn" onclick="filterProjects('professional', event)">Professional</button>
+                <button class="filter-btn" onclick="filterProjects('research', event)">Research</button>
+                <button class="filter-btn" onclick="filterProjects('academic', event)">Academic</button>
+                <button class="filter-btn" onclick="filterProjects('independent', event)">Independent</button>
+                <button class="filter-btn" onclick="filterProjects('volunteering', event)">Volunteering</button>
+            </div>
+
+            <div class="projects-grid">
+                
+                <div class="project-card" data-category="professional" id="tata-profitability" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Professional • Tata Play</span>
+                            <h3 style="margin: 0;">Enterprise Profitability Model & Automation</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                    </div>
+                    <ul>
+                        <li>Led the execution of a complex profitability model to drive business insights and revenue assurance.</li>
+                        <li>Managed SQL scripts and PostgreSQL databases to handle high-volume transactional data.</li>
+                        <li>Automated monthly reporting workflows using Spoon (Pentaho), reducing manual effort by 75%.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">SQL</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">Pentaho (Spoon)</span>
+                        <span class="tech-pill">Python</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>We faced a challenge with revenue assurance where manual reporting was too slow to distinguish between genuine customer churn and involuntary payment failures. By the time we identified the issue, revenue was often already lost.</p>
+                            <h4>The Solution</h4>
+                            <p>I automated the entire profitability workflow using Spoon (Pentaho) and optimized SQL scripts. This reduced reporting time by 75% and allowed us to recover revenue from nearly 800,000 customers by accurately identifying recoverable payment failures.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('tata-sentiment')"><h5>Customer Sentiment NLP</h5><span>Same Company</span></div>
+                            <div class="similar-link" onclick="jumpToProject('tata-churn')"><h5>Predictive Churn AI</h5><span>Same Company</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="professional" id="tata-sentiment" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Professional • Tata Play</span>
+                            <h3 style="margin: 0;">Customer Feedback Sentiment Analysis</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                    </div>
+                    <ul>
+                        <li>Developed an NLP-based model to classify customer feedback by issue type and sentiment.</li>
+                        <li>Utilized TF-IDF vectorization and Support Vector Machines (SVM) for accurate text classification.</li>
+                        <li>Deployed model outputs to a dynamic Power BI dashboard for the operations team.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">NLP</span>
+                        <span class="tech-pill">Machine Learning</span>
+                        <span class="tech-pill">Power BI</span>
+                        <span class="tech-pill">Python</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>The operations team was overwhelmed by thousands of unclassified customer reviews, making it impossible to quantify specific dissatisfaction drivers without manual reading.</p>
+                            <h4>The Solution</h4>
+                            <p>I built a dual-classification NLP model using TF-IDF and SVM. It automatically tagged reviews by 'Issue Type' and 'Sentiment', piping data into Power BI for real-time operational visibility.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('tata-profitability')"><h5>Enterprise Profitability</h5><span>Same Company</span></div>
+                            <div class="similar-link" onclick="jumpToProject('explainable-ai')"><h5>Explainable AI</h5><span>Machine Learning</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="professional" id="tata-churn" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Professional • Tata Play</span>
+                            <h3 style="margin: 0;">Predictive Churn Ensemble Model</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                    </div>
+                    <ul>
+                        <li>Built a predictive ensemble AI model to distinguish between temporary payment failures and genuine churn risk.</li>
+                        <li>Analyzed behavioral payment patterns to forecast at-risk accounts.</li>
+                        <li>Enabled targeted retention strategies, reducing unnecessary interventions for self-recovering customers.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Predictive Modeling</span>
+                        <span class="tech-pill">Ensemble Methods</span>
+                        <span class="tech-pill">Python</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Aggressive retention calls were being wasted on customers who were just experiencing temporary payment glitches, annoying them and wasting resources.</p>
+                            <h4>The Solution</h4>
+                            <p>I developed a predictive ensemble model to forecast which accounts were truly 'at-risk'. This allowed the marketing team to focus 100% of their retention budget on genuine churn cases.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('tata-profitability')"><h5>Enterprise Profitability</h5><span>Same Company</span></div>
+                            <div class="similar-link" onclick="jumpToProject('customer-segmentation')"><h5>Customer Segmentation</h5><span>Similar Tech</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="professional" id="colgate-supply-chain" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Professional • Colgate</span>
+                            <h3 style="margin: 0;">Supply Chain Stock Availability Report</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                    </div>
+                    <ul>
+                        <li>Designed and delivered a Snowflake-powered report to optimize stock management across APAC markets.</li>
+                        <li>Integrated complex supply-demand logic, safety stock thresholds, and lead times into a unified dashboard.</li>
+                        <li>Built a low-code Outsystems prototype to connect SAP data with external web interfaces.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Snowflake</span>
+                        <span class="tech-pill">SQL</span>
+                        <span class="tech-pill">SAP</span>
+                        <span class="tech-pill">Outsystems</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Inventory data and sales data lived in silos, making it difficult to predict stock shortages across the APAC region in real-time.</p>
+                            <h4>The Solution</h4>
+                            <p>I engineered a 'Stock Availability Report' in Snowflake, using complex SQL to blend real-time sales with inventory thresholds. It created a single source of truth for supply chain planners.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('tata-profitability')"><h5>Enterprise Profitability</h5><span>Data Engineering</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="professional" id="mobicule-masker" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Professional • Mobicule</span>
+                            <h3 style="margin: 0;">Sensitive Information Masker</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/031c804c-4670-4653-adac-1c8c527d5c6f_thumb.jpg" alt="Mobicule"></div>
+                    </div>
+                    <ul>
+                        <li>Developed a Python and Flask application using CNN models to automatically detect and mask sensitive data in images.</li>
+                        <li>Engineered the solution to be adaptable to varied image orientations and document types.</li>
+                        <li>Executed the full DevOps lifecycle from planning to deployment, ensuring a streamlined workflow.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Flask</span>
+                        <span class="tech-pill">Deep Learning</span>
+                        <span class="tech-pill">CNN</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Manual redaction of sensitive ID documents was a security risk and bottleneck. Standard tools failed when users uploaded rotated or blurry images.</p>
+                            <h4>The Solution</h4>
+                            <p>I built a Flask app powered by a custom CNN that could detect specific Regions of Interest (ROI) on ID cards regardless of orientation, automating security compliance.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('solar-anomaly')"><h5>Solar Panel Anomaly</h5><span>Computer Vision</span></div>
+                            <div class="similar-link" onclick="jumpToProject('lung-cancer')"><h5>Lung Cancer Detection</h5><span>Deep Learning</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="research" id="explainable-ai" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Research • Springer</span>
+                            <h3 style="margin: 0;">Towards Explainable Neural Networks</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Implemented a custom Layer-wise Relevance Propagation (LRP) mechanism with VGG16 to visualize model decisions.</li>
+                        <li>Generated pixel-level heatmaps to identify which image regions contributed most to classification.</li>
+                        <li>Integrated real-time video preprocessing to enhance transparency in high-stakes AI systems.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Explainable AI</span>
+                        <span class="tech-pill">Computer Vision</span>
+                        <span class="tech-pill">LRP</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>In healthcare, 'Black Box' AI models are untrustworthy. Doctors cannot rely on a diagnosis if they don't understand the AI's reasoning.</p>
+                            <h4>The Solution</h4>
+                            <p>I implemented Layer-wise Relevance Propagation (LRP) on VGG16. This generated heatmaps showing exactly which pixels influenced the decision, making the AI transparent and clinically verifiable.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('lung-cancer')"><h5>Lung Cancer Detection</h5><span>Medical AI</span></div>
+                            <div class="similar-link" onclick="jumpToProject('swin-transformer')"><h5>Swin Transformers</h5><span>Deep Learning</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="research" id="lung-cancer" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Research • Springer</span>
+                            <h3 style="margin: 0;">Lung Cancer Detection via EfficientNet</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Developed an EfficientNetB3 model tailored for detecting lung cancer from CT scans.</li>
+                        <li>Benchmarked performance against a hybrid ResNet50-DenseNet201 architecture.</li>
+                        <li>Achieved a superior classification accuracy of 94.29%, enhancing early clinical detection capabilities.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Deep Learning</span>
+                        <span class="tech-pill">Medical Imaging</span>
+                        <span class="tech-pill">EfficientNet</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Manual analysis of CT scans is time-consuming and prone to error, delaying critical early diagnoses.</p>
+                            <h4>The Solution</h4>
+                            <p>I developed an optimized EfficientNetB3 model that outperformed heavier architectures like ResNet50, achieving 94.29% accuracy while being computationally efficient enough for rapid deployment.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('explainable-ai')"><h5>Explainable Neural Networks</h5><span>Medical AI</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="research" id="swin-transformer" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Research • IEEE</span>
+                            <h3 style="margin: 0;">Swin Transformer for Object Detection</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Compared transformer-based models against traditional CNN detectors for autonomous driving scenarios.</li>
+                        <li>Benchmarked accuracy and robustness under noise, motion blur, and harsh weather conditions.</li>
+                        <li>Established that Swin Transformers consistently outperformed traditional models in adverse environments.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Transformers</span>
+                        <span class="tech-pill">Autonomous Systems</span>
+                        <span class="tech-pill">Object Detection</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Self-driving cars struggle in bad weather because traditional CNNs fail when images are noisy or blurry.</p>
+                            <h4>The Solution</h4>
+                            <p>I stress-tested Swin Transformers against CNNs under simulated harsh conditions. The Transformers' global context awareness allowed them to 'see through' the noise, proving superior for safety-critical autonomous systems.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('solar-anomaly')"><h5>Solar Panel Anomaly</h5><span>Computer Vision</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="research" id="solar-anomaly" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Research • KJSCE</span>
+                            <h3 style="margin: 0;">Solar Panel Anomaly Detection</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Built and trained a CNN model to identify anomalous spots and defects on solar panels requiring repair.</li>
+                        <li>Processed thermal images using color transformations, cropping, and thresholding to enhance data quality.</li>
+                        <li>Leveraged ResNet50 as a feature extractor for precise defect localization.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Deep Learning</span>
+                        <span class="tech-pill">CNN</span>
+                        <span class="tech-pill">Image Processing</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Detecting micro-defects on solar panels manually is inefficient and often inaccurate.</p>
+                            <h4>The Solution</h4>
+                            <p>I built a CNN model using ResNet50 as a feature extractor. By preprocessing thermal images with thresholding, the model could pinpoint defects with high precision, automating the maintenance pipeline.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('wetland-classification')"><h5>Wetland Classification</h5><span>Remote Sensing</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="research" id="wetland-classification" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Research • KJSCE</span>
+                            <h3 style="margin: 0;">Wetland vs. Dryland Classification</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Implemented remote sensing classification techniques to differentiate wetland and dryland ecosystems.</li>
+                        <li>Processed Landsat 8 satellite imagery and applied NDVI analysis for vegetation health.</li>
+                        <li>Performed accuracy assessment with stratified random sampling, achieving ~89% classification accuracy.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">ArcGIS</span>
+                        <span class="tech-pill">Machine Learning</span>
+                        <span class="tech-pill">Remote Sensing</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Monitoring large-scale ecosystem changes requires efficient processing of satellite imagery.</p>
+                            <h4>The Solution</h4>
+                            <p>I applied NDVI analysis on Landsat 8 data to distinguish wetlands from drylands. Using stratified random sampling, I validated the model to 89% accuracy, enabling better environmental monitoring.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('solar-anomaly')"><h5>Solar Panel Anomaly</h5><span>Image Processing</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="research" id="arcgis-pipeline" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Research • KJSCE</span>
+                            <h3 style="margin: 0;">ArcGIS Data Analysis & Pipeline</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Utilized ArcGIS, Google Earth Engine, and QGIS for extensive geospatial data preparation and analysis.</li>
+                        <li>Facilitated preprocessing and cleaning of large-scale geospatial datasets to ensure accuracy.</li>
+                        <li>Performed advanced spatial analysis to extract valuable regional insights and visualize data patterns.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Google Earth Engine</span>
+                        <span class="tech-pill">QGIS</span>
+                        <span class="tech-pill">ArcGIS</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Raw geospatial data is often fragmented and messy, making it unusable for accurate regional mapping or environmental analysis.</p>
+                            <h4>The Solution</h4>
+                            <p>I built a robust data cleaning pipeline using Google Earth Engine and QGIS. By standardizing and preprocessing large datasets, I ensured high data integrity, which enabled precise downstream spatial analysis and effective visualization.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('wetland-classification')"><h5>Wetland Classification</h5><span>Remote Sensing</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="research" id="connectivity-graph" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Research • KJSCE</span>
+                            <h3 style="margin: 0;">Website Connectivity Graph Analysis</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Analyzed complex data structures to create dynamic website connectivity graphs.</li>
+                        <li>Explored Neo4j graph databases to store and query intricate relationship data.</li>
+                        <li>Utilized Python libraries like Bokeh for effective interactive data visualization.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Neo4j</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Bokeh</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Understanding the relationships between different websites and digital nodes is difficult with standard tabular data.</p>
+                            <h4>The Solution</h4>
+                            <p>I leveraged Neo4j to model these relationships as a graph database. Using Bokeh, I created dynamic, interactive visualizations that allowed users to explore the connectivity between various websites intuitively.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('customer-segmentation')"><h5>Customer Segmentation</h5><span>Data Analysis</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="research" id="counseling-app" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Research • IEEE</span>
+                            <h3 style="margin: 0;">College Counseling Platform</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Designed a web and mobile application to bridge the gap between students and on-campus mental health services.</li>
+                        <li>Incorporated anonymous story sharing, appointment booking, and motivational resources.</li>
+                        <li>Applied user-centered design principles based on qualitative feedback from counselors and students.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Web Dev</span>
+                        <span class="tech-pill">UI/UX</span>
+                        <span class="tech-pill">Mobile App</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Surveys showed 80% of students were unaware of campus counseling services, and stigma prevented many from seeking help.</p>
+                            <h4>The Solution</h4>
+                            <p>I designed a friendly, anonymous platform that removed the friction of booking appointments. The addition of 'Story Sharing' created a community of support, making mental health resources accessible and less intimidating.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('bus-booking')"><h5>Bus Booking System</h5><span>Web Development</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="independent" id="customer-segmentation" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Independent</span>
+                            <h3 style="margin: 0;">Customer Segmentation Dashboard</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0; font-weight: bold; font-size: 0.8rem; background-color: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">IND</div>
+                    </div>
+                    <ul>
+                        <li>Applied K-Means clustering for customer segmentation using machine learning.</li>
+                        <li>Performed data preprocessing, model training, and segment profiling.</li>
+                        <li>Developed insights to support personalized marketing strategies.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Machine Learning</span>
+                        <span class="tech-pill">K-Means</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Businesses often treat all customers the same because they lack the tools to identify distinct behavioral groups.</p>
+                            <h4>The Solution</h4>
+                            <p>I built a clustering pipeline using K-Means to segment customers based on purchasing behavior. This enabled personalized marketing strategies for different groups, from 'Loyalists' to 'At-Risk'.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('tata-churn')"><h5>Predictive Churn AI</h5><span>Business Analytics</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="volunteering" id="rotary-shelter" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Volunteering • Rotary Club</span>
+                            <h3 style="margin: 0;">Animal Shelter Resource Analysis</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images (1).png" alt="Rotary Club"></div>
+                    </div>
+                    <ul>
+                        <li>Applied data analysis to track and monitor adoption rates for rescued animals.</li>
+                        <li>Organized medical care records and analyzed resource allocation needs.</li>
+                        <li>Streamlined shelter operations to create a safer environment for animals.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Data Analysis</span>
+                        <span class="tech-pill">Resource Management</span>
+                        <span class="tech-pill">Excel</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>The shelter had messy records and couldn't efficiently track vaccinations or adoption trends.</p>
+                            <h4>The Solution</h4>
+                            <p>I digitized their tracking system. By analyzing adoption and medical data, we optimized resource allocation, ensuring the limited funds went where they could save the most lives.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('ngo-healthcare')"><h5>Healthcare Outreach</h5><span>Data for Good</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="volunteering" id="ngo-healthcare" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Volunteering • NGO Cell</span>
+                            <h3 style="margin: 0;">Healthcare Outreach Evaluation</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0; font-weight: bold; font-size: 0.8rem; background-color: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">NGO</div>
+                    </div>
+                    <ul>
+                        <li>Evaluated patient outreach data to monitor the efficiency of healthcare initiatives.</li>
+                        <li>Identified critical areas for improvement to enable better resource allocation.</li>
+                        <li>Supported the delivery of medical services to underserved communities through data insights.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Data Analysis</span>
+                        <span class="tech-pill">Healthcare Analytics</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Healthcare camps were being organized, but there was no data on their effectiveness or reach.</p>
+                            <h4>The Solution</h4>
+                            <p>I implemented an impact evaluation framework. By analyzing patient turnout and service usage, I provided the NGO with insights to better target their future medical camps.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('rotary-shelter')"><h5>Animal Shelter Analysis</h5><span>Data for Good</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="volunteering" id="utkarsha-training" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Volunteering • Utkarsha Mandal</span>
+                            <h3 style="margin: 0;">Tech Literacy Training Program</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/um .jpg" alt="Utkarsha Mandal"></div>
+                    </div>
+                    <ul>
+                        <li>Designed and conducted training sessions in Microsoft Excel and Python for students.</li>
+                        <li>Taught data organization, visualization, and basic programming concepts.</li>
+                        <li>Empowered youth through skill development and technical literacy.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Teaching</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Excel</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Underprivileged students lacked access to basic digital literacy training, putting them at a career disadvantage.</p>
+                            <h4>The Solution</h4>
+                            <p>I designed a curriculum for Python and Excel basics. Teaching these interactive sessions helped bridge the digital divide, giving students tangible skills for their future careers.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('counseling-app')"><h5>Counseling Platform</h5><span>Community Impact</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="academic" id="bus-booking" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Academic</span>
+                            <h3 style="margin: 0;">Bus Booking System</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Developed a user-friendly booking platform with dynamic fare calculation based on distance.</li>
+                        <li>Implemented visually appealing seat selection, coupon code support, and automated receipt generation.</li>
+                        <li>Built a robust backend to handle reservations and user data securely.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Flask</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">HTML/CSS</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Traditional booking systems were often clunky and lacked visual feedback for users.</p>
+                            <h4>The Solution</h4>
+                            <p>I built a full-stack Flask application with a dynamic frontend. The interactive seat selection and automated fare engine created a seamless user experience comparable to modern travel apps.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('bakery-website')"><h5>Bakery Website</h5><span>Web Development</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="academic" id="bakery-website" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Academic</span>
+                            <h3 style="margin: 0;">Bakery Management Website</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Developed a full-stack website featuring real-time order placement and table booking capabilities.</li>
+                        <li>Integrated a REST API to ensure secure email authentication and booking confirmations.</li>
+                        <li>Implemented secure user accounts and automated email notifications for successful reservations.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Web Dev</span>
+                        <span class="tech-pill">REST API</span>
+                        <span class="tech-pill">Email Auth</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Small businesses often lack affordable, custom digital solutions for managing orders and reservations.</p>
+                            <h4>The Solution</h4>
+                            <p>I developed a secure, REST API-driven website that handled everything from user authentication to automated email confirmations, providing a complete digital storefront.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('bus-booking')"><h5>Bus Booking System</h5><span>Web Development</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="academic" id="colour-quantization" onclick="openModal(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+                        <div>
+                            <span class="project-label" style="display: block; margin-bottom: 0.5rem;">Academic</span>
+                            <h3 style="margin: 0;">Colour Quantization via K-Means</h3>
+                        </div>
+                        <div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0;"><img src="assets/images.png" alt="KJSCE"></div>
+                    </div>
+                    <ul>
+                        <li>Implemented K-Means clustering to extract predominant color palettes from images.</li>
+                        <li>Generated quantized versions of images with significantly reduced color profiles.</li>
+                        <li>Applied Wu's algorithm for deterministic initialization.</li>
+                    </ul>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Algorithms</span>
+                    </div>
+                    <div class="hidden-details">
+                        <div class="story">
+                            <h4>The Problem</h4>
+                            <p>Reducing image file size while maintaining visual quality requires smart color palette reduction.</p>
+                            <h4>The Solution</h4>
+                            <p>I implemented K-Means clustering to mathematically determine the most 'dominant' colors in an image. This allowed me to reconstruct the image using a significantly smaller palette with minimal visual loss.</p>
+                        </div>
+                        <div class="similar">
+                            <div class="similar-link" onclick="jumpToProject('customer-segmentation')"><h5>Customer Segmentation</h5><span>Clustering Algorithms</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="reveal">
+            <div>
+                <a href="mailto:paarthkapur@gmail.com">paarthkapur@gmail.com</a> | 
+                <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModalBtn()">×</span>
+            
+            <div id="modal-header-content" style="display: flex; align-items: center; gap: 1.5rem;">
+                <div id="modalLogo" class="card-logo" style="width: 70px; height: 70px; flex-shrink: 0; background: #fff; border: 1px solid #e2e8f0;"></div>
+                <div>
+                    <h2 id="modalTitle" class="modal-title" style="margin: 0; padding: 0;">Title</h2>
+                    <h4 id="modalSubtitle" style="color: #64748b; margin: 0.3rem 0 0 0; font-weight: 500; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Category</h4>
+                </div>
+            </div>
+
+            <div class="modal-body-grid">
+                <div class="project-story" id="modalStory"></div>
+
+                <div class="modal-sidebar">
+                    <div class="sidebar-group">
+                        <div class="sidebar-title">View Similar Projects</div>
+                        <div id="modalSimilar"></div>
+                    </div>
+
+                    <div id="modalSkillsSection" class="sidebar-group" style="margin-top: 1.5rem;">
+                        <div class="sidebar-title">Technologies</div>
+                        <div id="modalSkills"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(card) {
+            // Title & Subtitle
+            const title = card.querySelector('h3').innerText;
+            const subtitle = card.querySelector('.project-label').innerText;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = subtitle;
+
+            // Logo mapping
+            const logoEl = card.querySelector('.card-logo');
+            const modalLogo = document.getElementById('modalLogo');
+            if (logoEl) {
+                modalLogo.innerHTML = logoEl.innerHTML;
+                modalLogo.style.display = 'flex';
+            } else {
+                modalLogo.style.display = 'none';
+            }
+
+            // --- 1. Get Bullets (The existing UL on the card) ---
+            const cardList = card.querySelector('ul');
+            let bulletsHtml = '';
+            if (cardList) {
+                bulletsHtml = cardList.outerHTML; 
+            }
+
+            // --- 2. Get Hidden Details (Problem/Solution) ---
+            const hiddenDetails = card.querySelector('.hidden-details');
+            
+            if (hiddenDetails) {
+                const storyHtml = hiddenDetails.querySelector('.story').innerHTML;
+                const similarHtml = hiddenDetails.querySelector('.similar').innerHTML;
+
+                // COMBINE: Bullets first, then Story
+                document.getElementById('modalStory').innerHTML = bulletsHtml + storyHtml;
+                document.getElementById('modalSimilar').innerHTML = similarHtml;
+            } else {
+                // Fallback
+                document.getElementById('modalStory').innerHTML = bulletsHtml || "<p>Details coming soon.</p>";
+                document.getElementById('modalSimilar').innerHTML = "";
+            }
+
+            // --- 3. Get Skills (Tech Pills from Card) and move to sidebar ---
+            const techEl = card.querySelector('.tech-pills');
+            const skillsSection = document.getElementById('modalSkillsSection');
+            if (techEl) {
+                // Wrap them in the white container box and inject into sidebar
+                document.getElementById('modalSkills').innerHTML = '<div class="skills-container">' + techEl.innerHTML + '</div>';
+                skillsSection.style.display = 'block';
+            } else {
+                skillsSection.style.display = 'none';
+            }
+
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('show'); }, 10);
+        }
+
+        function jumpToProject(projectId) {
+            closeModalBtn();
+            const targetCard = document.getElementById(projectId);
+            if (targetCard) {
+                setTimeout(() => {
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Visual feedback
+                    targetCard.style.transition = "0.3s";
+                    targetCard.style.transform = "scale(1.02)";
+                    targetCard.style.borderColor = "#0082d8";
+                    
+                    setTimeout(() => {
+                        targetCard.style.transform = "";
+                        targetCard.style.borderColor = "";
+                        openModal(targetCard);
+                    }, 500);
+                }, 350);
+            }
+        }
+
+        function closeModal(event) { if (event.target.id === 'projectModal') closeModalAction(); }
+        function closeModalBtn() { closeModalAction(); }
+        function closeModalAction() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('show');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        function filterProjects(category, event) {
+            let buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            let cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#1668b6" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.6, "random": false },
+                "size": { "value": 3.7, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#cbd5e1",
+                    "opacity": 0.5,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 180, "line_linked": { "opacity": 0.8 } },
+                    "push": { "particles_nb": 3 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

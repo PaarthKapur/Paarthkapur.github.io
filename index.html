@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paarth Kapur | Portfolio</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* Hover effect to show cards are clickable */
+        .skill-card {
+            cursor: pointer;
+        }
+        /* Grid layout for the links inside the pop-up */
+        .modal-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        /* Remove default bottom margin so grid handles spacing */
+        .modal-links-grid .similar-link {
+            margin-bottom: 0;
+            display: flex; 
+            align-items: center; 
+            gap: 1rem;
+            text-decoration: none;
+        }
+        /* Ensure logos inside links stay small and proportioned */
+        .modal-links-grid .card-logo {
+            width: 42px; 
+            height: 42px; 
+            flex-shrink: 0;
+        }
+        .link-text-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="side-left reveal">
+        <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank" title="LinkedIn">in</a>
+        <a href="#" target="_blank" title="GitHub">gh</a>
+    </div>
+
+    <div class="side-right reveal">
+        <a href="mailto:paarthkapur@gmail.com" class="vertical-text">paarthkapur@gmail.com</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><a href="index.html">Paarth Kapur</a></h1>
+            <nav>
+                <a href="index.html">About</a>
+                <a href="experience.html">Experience & Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="publications.html">Publications</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero reveal">
+                <h2>Hello, I'm Paarth.</h2>
+                <p style="color: #64748b; font-weight: 500; margin-bottom: 1rem;">Data Analyst & Business Analyst</p>
+                <p>I am a results-driven professional with a background in Information Technology and Artificial Intelligence. My expertise lies in leveraging SQL, Python, and Machine Learning to drive business insights and automate complex workflows.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="projects.html" class="btn">View My Work</a>
+                    <a href="assets/resume.pdf" class="btn" style="background-color: transparent; border: 1px solid #000; color: #000;">Download Resume</a>
+                </div>
+            </section>
+
+            <section id="about" class="reveal">
+                <h2>About Me</h2>
+                <p>Currently serving as a Business Analyst at Tata Play, where I lead the execution of profitability models and automate high-volume data processes. Previously, I gained significant experience as a Data Analyst Intern at Colgate Global Business Solutions, optimizing supply chain processes using Snowflake SQL.</p>
+                <p>I am passionate about Explainable AI and have published research on enhancing neural network transparency. In addition to my technical work, I am actively involved in volunteering initiatives to empower youth and support underserved communities.</p>
+            </section>
+
+            <section id="skills" class="reveal">
+                <h2>Skills <span style="font-size: 0.9rem; font-weight: 400; color: #94a3b8; margin-left: 0.5rem;">(Scroll down & click to view details)</span></h2>
+                
+                <div class="skills-scroll-wrapper">
+                    <div class="skills-grid">
+                        
+                        <div class="skill-card" onclick="openSkillModal(this)">
+                            <h3>Languages & Databases</h3>
+                            <p>SQL, Python, R, NoSQL, PostgreSQL, Snowflake</p>
+                            
+                            <div class="hidden-details">
+                                <div class="related-experience">
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Tata Play Pvt Ltd</h5>
+                                            <span>Business Analyst • SQL, Python, PostgreSQL</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                                        <div class="link-text-content">
+                                            <h5>Colgate Global Business Solutions</h5>
+                                            <span>Data Analyst • Snowflake SQL</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/031c804c-4670-4653-adac-1c8c527d5c6f_thumb.jpg" alt="Mobicule"></div>
+                                        <div class="link-text-content">
+                                            <h5>Mobicule Technologies</h5>
+                                            <span>Programmer Analyst • Python</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>K. J. Somaiya College</h5>
+                                            <span>B.Tech Degree & Internships • Python, Neo4j, SQL</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="related-projects">
+                                    <a href="projects.html#tata-profitability" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Profitability Model & Automation</h5>
+                                            <span>SQL, PostgreSQL, Python</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#colgate-supply-chain" class="similar-link">
+                                        <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                                        <div class="link-text-content">
+                                            <h5>Stock Availability Report</h5>
+                                            <span>Snowflake SQL</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#connectivity-graph" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>Website Connectivity Graph</h5>
+                                            <span>Python, Neo4j</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#customer-segmentation" class="similar-link">
+                                        <div class="card-logo" style="font-weight:bold; font-size: 0.75rem;">IND</div>
+                                        <div class="link-text-content">
+                                            <h5>Customer Segmentation Dashboard</h5>
+                                            <span>Python</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card" onclick="openSkillModal(this)">
+                            <h3>Data & Visualization</h3>
+                            <p>Power BI, Tableau, Excel (Advanced), DOMO, Sigma</p>
+
+                            <div class="hidden-details">
+                                <div class="related-experience">
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Tata Play Pvt Ltd</h5>
+                                            <span>Business Analyst • Power BI, Excel</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                                        <div class="link-text-content">
+                                            <h5>Colgate Global Business Solutions</h5>
+                                            <span>Data Analyst • DOMO, Sigma, Excel</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/um .jpg" alt="Utkarsha Mandal"></div>
+                                        <div class="link-text-content">
+                                            <h5>Utkarsha Mandal</h5>
+                                            <span>Volunteer Trainer • Excel</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images (1).png" alt="Rotary Club"></div>
+                                        <div class="link-text-content">
+                                            <h5>Rotary Club</h5>
+                                            <span>Volunteer • Advanced Excel</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="related-projects">
+                                    <a href="projects.html#tata-sentiment" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Customer Feedback Sentiment</h5>
+                                            <span>Power BI</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#colgate-supply-chain" class="similar-link">
+                                        <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                                        <div class="link-text-content">
+                                            <h5>Supply Chain Stock Availability</h5>
+                                            <span>DOMO, Sigma</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#utkarsha-training" class="similar-link">
+                                        <div class="card-logo"><img src="assets/um .jpg" alt="Utkarsha Mandal"></div>
+                                        <div class="link-text-content">
+                                            <h5>Tech Literacy Training Program</h5>
+                                            <span>Microsoft Excel</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#rotary-shelter" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images (1).png" alt="Rotary Club"></div>
+                                        <div class="link-text-content">
+                                            <h5>Animal Shelter Resource Analysis</h5>
+                                            <span>Microsoft Excel</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card" onclick="openSkillModal(this)">
+                            <h3>Frameworks & ML</h3>
+                            <p>Flask, Selenium, Deep Learning (CNN), NLP</p>
+
+                            <div class="hidden-details">
+                                <div class="related-experience">
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Tata Play Pvt Ltd</h5>
+                                            <span>Business Analyst • NLP, Selenium</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>K. J. Somaiya College</h5>
+                                            <span>B.Tech AI Honors • Machine Learning, NLP</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/031c804c-4670-4653-adac-1c8c527d5c6f_thumb.jpg" alt="Mobicule"></div>
+                                        <div class="link-text-content">
+                                            <h5>Mobicule Technologies</h5>
+                                            <span>Programmer Analyst • Flask, Deep Learning</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>KJSCE - Deep Learning</h5>
+                                            <span>Technical Intern • Deep Learning (CNN)</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="related-projects">
+                                    <a href="projects.html#tata-sentiment" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Customer Feedback Sentiment</h5>
+                                            <span>NLP</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#mobicule-masker" class="similar-link">
+                                        <div class="card-logo"><img src="assets/031c804c-4670-4653-adac-1c8c527d5c6f_thumb.jpg" alt="Mobicule"></div>
+                                        <div class="link-text-content">
+                                            <h5>Sensitive Information Masker</h5>
+                                            <span>Flask, Deep Learning (CNN)</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#solar-anomaly" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>Solar Panel Anomaly Detection</h5>
+                                            <span>Deep Learning (CNN)</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#bus-booking" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>Bus Booking / Bakery Websites</h5>
+                                            <span>Flask Framework</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card" onclick="openSkillModal(this)">
+                            <h3>Tools & Cloud</h3>
+                            <p>Airflow, DBT, SAP, Pentaho (Spoon)</p>
+
+                            <div class="hidden-details">
+                                <div class="related-experience">
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Tata Play Pvt Ltd</h5>
+                                            <span>Business Analyst • Pentaho (Spoon)</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                                        <div class="link-text-content">
+                                            <h5>Colgate Global Business Solutions</h5>
+                                            <span>Data Analyst • SAP, Airflow, DBT</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>K. J. Somaiya College</h5>
+                                            <span>B.Tech Coursework • Cloud Computing, DBMS</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="related-projects">
+                                    <a href="projects.html#tata-profitability" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Enterprise Profitability Automation</h5>
+                                            <span>Pentaho (Spoon)</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#colgate-supply-chain" class="similar-link">
+                                        <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                                        <div class="link-text-content">
+                                            <h5>Supply Chain Stock Availability</h5>
+                                            <span>SAP Integration</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card" onclick="openSkillModal(this)">
+                            <h3>Advanced Analytics & Research</h3>
+                            <p>Spatial Analysis, Big Data Processing, ArcGIS, QGIS</p>
+                            <div class="hidden-details">
+                                <div class="related-experience">
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>KJSCE - Remote Sensing</h5>
+                                            <span>Technical Intern • ArcGIS, NDVI</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>KJSCE - ArcGIS Data</h5>
+                                            <span>Technical Intern • QGIS, Google Earth Engine</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="related-projects">
+                                    <a href="projects.html#wetland-classification" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>Wetland Classification</h5>
+                                            <span>ArcGIS, Remote Sensing</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#arcgis-pipeline" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>ArcGIS Data Pipeline</h5>
+                                            <span>Google Earth Engine, QGIS</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card" onclick="openSkillModal(this)">
+                            <h3>Business & Automation</h3>
+                            <p>Power Automate, Outsystems, Workflow Optimization</p>
+                            <div class="hidden-details">
+                                <div class="related-experience">
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Tata Play Pvt Ltd</h5>
+                                            <span>Business Analyst • Power Automate</span>
+                                        </div>
+                                    </a>
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                                        <div class="link-text-content">
+                                            <h5>Colgate Global Business Solutions</h5>
+                                            <span>Data Analyst • Outsystems</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="related-projects">
+                                    <a href="projects.html#tata-profitability" class="similar-link">
+                                        <div class="card-logo"><img src="assets/TP logo.jpg" alt="Tata Play"></div>
+                                        <div class="link-text-content">
+                                            <h5>Profitability Model & Automation</h5>
+                                            <span>Workflow Optimization</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#colgate-supply-chain" class="similar-link">
+                                        <div class="card-logo"><img src="assets/Emblem-Colgate-Palmolive.jpg" alt="Colgate"></div>
+                                        <div class="link-text-content">
+                                            <h5>Supply Chain Stock Availability</h5>
+                                            <span>Outsystems Prototype</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card" onclick="openSkillModal(this)">
+                            <h3>Web Development & UI/UX</h3>
+                            <p>HTML/CSS, JavaScript, REST APIs, UI Design</p>
+                            <div class="hidden-details">
+                                <div class="related-experience">
+                                    <a href="experience.html" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>K. J. Somaiya College</h5>
+                                            <span>B.Tech Degree • Academic Projects & Web Dev</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="related-projects">
+                                    <a href="projects.html#counseling-app" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>College Counseling Platform</h5>
+                                            <span>UI/UX & Web Dev</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#bus-booking" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>Bus Booking System</h5>
+                                            <span>JavaScript, HTML/CSS</span>
+                                        </div>
+                                    </a>
+                                    <a href="projects.html#bakery-website" class="similar-link">
+                                        <div class="card-logo"><img src="assets/images.png" alt="KJSCE"></div>
+                                        <div class="link-text-content">
+                                            <h5>Bakery Management Website</h5>
+                                            <span>REST API, Web Dev</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="reveal">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new opportunities or projects.</p>
+            <div>
+                <a href="mailto:paarthkapur@gmail.com">paarthkapur@gmail.com</a> | 
+                <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank">LinkedIn</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.8rem; color: #666;">© 2026 Paarth Kapur. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="skillModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModalBtn()">×</span>
+            
+            <div id="modal-header-content">
+                <h2 id="modalTitle" class="modal-title" style="margin-bottom: 0;">Skill Category</h2>
+                <p id="modalSkillList" style="color: #0082d8; font-weight: 500; margin-top: 0.2rem; margin-bottom: 1.5rem;"></p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                
+                <div class="sidebar-group">
+                    <div class="sidebar-title">Related Experience</div>
+                    <div id="modalExperiences" class="modal-links-grid"></div>
+                </div>
+
+                <div class="sidebar-group">
+                    <div class="sidebar-title">Related Projects</div>
+                    <div id="modalProjects" class="modal-links-grid"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic for Skills
+        function openSkillModal(card) {
+            const title = card.querySelector('h3').innerText;
+            const skillList = card.querySelector('p').innerText;
+            
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSkillList').innerText = skillList;
+
+            const hiddenDetails = card.querySelector('.hidden-details');
+            
+            if (hiddenDetails) {
+                document.getElementById('modalExperiences').innerHTML = hiddenDetails.querySelector('.related-experience').innerHTML;
+                document.getElementById('modalProjects').innerHTML = hiddenDetails.querySelector('.related-projects').innerHTML;
+            } else {
+                document.getElementById('modalExperiences').innerHTML = "<span>No specific experience linked.</span>";
+                document.getElementById('modalProjects').innerHTML = "<span>No specific projects linked.</span>";
+            }
+
+            const modal = document.getElementById('skillModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('show'); }, 10);
+        }
+
+        function closeModal(event) { if (event.target.id === 'skillModal') closeModalAction(); }
+        function closeModalBtn() { closeModalAction(); }
+        function closeModalAction() {
+            const modal = document.getElementById('skillModal');
+            modal.classList.remove('show');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        // Scroll Reveal
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100); 
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#1668b6" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.6, "random": false },
+                "size": { "value": 3.7, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#cbd5e1",
+                    "opacity": 0.5,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 180, "line_linked": { "opacity": 0.8 } },
+                    "push": { "particles_nb": 3 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

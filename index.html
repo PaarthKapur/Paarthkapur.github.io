@@ -5,37 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paarth Kapur | Portfolio</title>
     <link rel="stylesheet" href="assets/style.css">
-    <style>
-        /* Hover effect to show cards are clickable */
-        .skill-card {
-            cursor: pointer;
-        }
-        /* Grid layout for the links inside the pop-up */
-        .modal-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-        /* Remove default bottom margin so grid handles spacing */
-        .modal-links-grid .similar-link {
-            margin-bottom: 0;
-            display: flex; 
-            align-items: center; 
-            gap: 1rem;
-            text-decoration: none;
-        }
-        /* Ensure logos inside links stay small and proportioned */
-        .modal-links-grid .card-logo {
-            width: 42px; 
-            height: 42px; 
-            flex-shrink: 0;
-        }
-        .link-text-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    </style>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -61,26 +30,35 @@
         </header>
 
         <main>
+            <!-- HERO SECTION -->
             <section class="hero reveal">
                 <h2>Hello, I'm Paarth.</h2>
-                <p style="color: #64748b; font-weight: 500; margin-bottom: 1rem;">MS Data Science Student @ UW | Data & Business Analytics</p>
-                <p>I'm Paarth, a Data Science graduate student at the University of Washington with experience in business analytics, financial modeling, and supply chain operations. I focus on turning complex enterprise data into clean pipelines, automated workflows, and actionable business insights.</p>
-                <div style="margin-top: 2rem;">
+                <p style="color: #64748b; font-weight: 500; margin-bottom: 0.75rem;">MS Data Science Student @ UW | Data & Business Analytics</p>
+                <p style="max-width: 800px;">I'm Paarth, a Data Science graduate student at the University of Washington with experience in business analytics, financial modeling, and supply chain operations. I focus on turning complex enterprise data into clean pipelines, automated workflows, and actionable business insights.</p>
+                <div>
                     <a href="projects.html" class="btn">View My Work</a>
-                    <a href="assets/resumemain.pdf" class="btn" style="background-color: transparent; border: 1px solid #000; color: #000;">Download Resume</a>
+                    <a href="assets/resumemain.pdf" target="_blank" class="btn" style="background-color: transparent; border: 1px solid #000; color: #000;">Download Resume</a>
                 </div>
             </section>
 
-            <section id="about" class="reveal">
-                <h2>About Me</h2>
-                <p>My professional experience centers on applying database engineering, statistical modeling, and workflow automation to solve practical business challenges. At Tata Play, I developed financial profitability models using SQL and PostgreSQL, designed Tableau fraud-detection reporting, and automated recurring monthly processes to cut execution time by 75%. Previously, at Colgate Global Business Solutions, I worked on Snowflake-driven supply chain analytics across inventory management, sales forecasting, and stock availability reporting.</p>
-                <p>I am currently pursuing my M.S. in Data Science at the University of Washington, building upon my B.Tech in Information Technology with Honors in Artificial Intelligence. My technical focus combines machine learning, database systems, and quantitative analytics to help organizations make data-driven decisions and optimize business performance.</p>
-            </section>
-
-            <section id="skills" class="reveal">
-                <h2>Skills <span style="font-size: 0.9rem; font-weight: 400; color: #94a3b8; margin-left: 0.5rem;">(Scroll down & click to view details)</span></h2>
+            <!-- 2-COLUMN DASHBOARD GRID -->
+            <div class="content-grid">
                 
-                <div class="skills-scroll-wrapper">
+                <!-- LEFT COLUMN: ABOUT ME -->
+                <section id="about" class="reveal">
+                    <h2>About Me</h2>
+                    <p>My professional experience centers on applying database engineering, statistical modeling, and workflow automation to solve practical business challenges. At Tata Play, I developed financial profitability models using SQL and PostgreSQL, designed Tableau fraud-detection reporting, and automated recurring monthly processes to cut execution time by 75%.</p>
+                    <p>Previously, at Colgate Global Business Solutions, I worked on Snowflake-driven supply chain analytics across inventory management, sales forecasting, and stock availability reporting.</p>
+                    <p>I am currently pursuing my M.S. in Data Science at the University of Washington, building upon my B.Tech in Information Technology with Honors in Artificial Intelligence. My technical focus combines machine learning, database systems, and quantitative analytics to help organizations make data-driven decisions and optimize business performance.</p>
+                </section>
+
+                <!-- RIGHT COLUMN: SKILLS GRID -->
+                <section id="skills" class="reveal">
+                    <h2 style="display: flex; align-items: baseline; justify-content: space-between;">
+                        Skills 
+                        <span style="font-size: 0.8rem; font-weight: 400; color: #94a3b8;">(Click card for details)</span>
+                    </h2>
+                    
                     <div class="skills-grid">
                         
                         <div class="skill-card" onclick="openSkillModal(this)">
@@ -337,6 +315,7 @@
                         <div class="skill-card" onclick="openSkillModal(this)">
                             <h3>Advanced Analytics & Research</h3>
                             <p>Spatial Analysis, Big Data Processing, ArcGIS, QGIS</p>
+
                             <div class="hidden-details">
                                 <div class="related-experience">
                                     <a href="experience.html" class="similar-link">
@@ -376,6 +355,7 @@
                         <div class="skill-card" onclick="openSkillModal(this)">
                             <h3>Business & Automation</h3>
                             <p>Power Automate, Outsystems, Workflow Optimization</p>
+
                             <div class="hidden-details">
                                 <div class="related-experience">
                                     <a href="experience.html" class="similar-link">
@@ -415,6 +395,7 @@
                         <div class="skill-card" onclick="openSkillModal(this)">
                             <h3>Web Development & UI/UX</h3>
                             <p>HTML/CSS, JavaScript, REST APIs, UI Design</p>
+
                             <div class="hidden-details">
                                 <div class="related-experience">
                                     <a href="experience.html" class="similar-link">
@@ -452,8 +433,9 @@
                         </div>
 
                     </div>
-                </div>
-            </section>
+                </section>
+
+            </div>
         </main>
 
         <footer class="reveal">
@@ -463,21 +445,21 @@
                 <a href="mailto:paarthkapur@gmail.com">paarthkapur@gmail.com</a> | 
                 <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank">LinkedIn</a>
             </div>
-            <p style="margin-top: 2rem; font-size: 0.8rem; color: #666;">© 2026 Paarth Kapur. All rights reserved.</p>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #64748b;">© 2026 Paarth Kapur. All rights reserved.</p>
         </footer>
     </div>
 
+    <!-- MODAL POP-UP -->
     <div id="skillModal" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModalBtn()">×</span>
             
             <div id="modal-header-content">
-                <h2 id="modalTitle" class="modal-title" style="margin-bottom: 0;">Skill Category</h2>
+                <h2 id="modalTitle" class="modal-title">Skill Category</h2>
                 <p id="modalSkillList" style="color: #0082d8; font-weight: 500; margin-top: 0.2rem; margin-bottom: 1.5rem;"></p>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 2rem;">
-                
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                 <div class="sidebar-group">
                     <div class="sidebar-title">Related Experience</div>
                     <div id="modalExperiences" class="modal-links-grid"></div>
@@ -487,7 +469,6 @@
                     <div class="sidebar-title">Related Projects</div>
                     <div id="modalProjects" class="modal-links-grid"></div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -520,8 +501,10 @@
         function closeModalBtn() { closeModalAction(); }
         function closeModalAction() {
             const modal = document.getElementById('skillModal');
-            modal.classList.remove('show');
-            setTimeout(() => { modal.style.display = 'none'; }, 300);
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => { modal.style.display = 'none'; }, 300);
+            }
         }
 
         // Scroll Reveal

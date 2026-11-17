@@ -12,7 +12,7 @@
 
 <div class="side-left reveal">
 <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank" title="LinkedIn">in</a>
-<a href="#" target="_blank" title="GitHub">gh</a>
+<a href="https://github.com/PaarthKapur" target="_blank" rel="noopener noreferrer" title="GitHub">gh</a>
 </div>
 <div class="side-right reveal">
 <a class="vertical-text" href="mailto:paarthkapur@gmail.com">paarthkapur@gmail.com</a>
@@ -30,12 +30,19 @@
 <main>
 
 <section class="hero reveal">
+<div class="hero-inner">
+<div class="hero-text">
 <h2>Hello, I'm Paarth.</h2>
 <p style="color: #64748b; font-weight: 500; margin-bottom: 0.75rem;">MS Data Science Student @ UW | Data &amp; Business Analytics</p>
 <p style="max-width: 800px;">I'm Paarth, a Data Science graduate student at the University of Washington with experience in business analytics, financial modeling, and supply chain operations. I focus on turning complex enterprise data into clean pipelines, automated workflows, and actionable business insights.</p>
 <div>
 <a class="btn" href="projects.html">View My Work</a>
 <a class="btn" href="assets/resumemain.pdf" style="background-color: transparent; border: 1px solid #000; color: #000;" target="_blank">Download Resume</a>
+</div>
+</div>
+<div class="hero-photo">
+<img alt="Paarth Kapur" src="assets/paarth-portrait.jpg"/>
+</div>
 </div>
 </section>
 
@@ -187,8 +194,8 @@
 </div>
 </div>
 <div class="skill-card" onclick="openSkillModal(this)">
-<h3>Frameworks &amp; ML</h3>
-<p>Flask, Selenium, Deep Learning (CNN), NLP</p>
+<h3>Generative AI &amp; Machine Learning</h3>
+<p>LLMs, RAG, Deep Learning (CNN), NLP, Transformers</p>
 <div class="hidden-details">
 <div class="related-experience">
 <a class="similar-link" href="experience.html">
@@ -376,6 +383,50 @@
 </div>
 </section>
 </div>
+
+<section class="reveal education-section" id="education">
+<h2>Education</h2>
+<div class="about-edu" onclick="openEduModal(this)">
+<div class="card-logo"><img alt="University of Washington" src="assets/uw-logo.png"/></div>
+<div class="about-edu-body">
+<div class="card-header">
+<h3>M.S. in Data Science</h3>
+<span class="date-pill">Currently Pursuing</span>
+</div>
+<h4 class="company">University of Washington</h4>
+<p class="location">Seattle, WA</p>
+<p class="description">Pursuing graduate studies in data science, building on my professional experience in finance and supply chain analytics.</p>
+<div class="hidden-details">
+<div class="story">
+<h4>Academic Overview</h4>
+<p>Currently pursuing my M.S. in Data Science at the University of Washington, where I am strengthening my foundation in statistical analysis, data visualization, and machine learning. My studies build on my experience in finance and supply chain analytics, with an emphasis on using data to understand business performance and support data-driven decisions.</p>
+<h4>Key Coursework</h4>
+<ul>
+<li>Introduction to Statistics and Probability</li>
+<li>Applied Statistics and Experimental Design</li>
+<li>Statistical Machine Learning for Data Science</li>
+<li>Data Visualization for Data Scientists</li>
+</ul>
+</div>
+<div class="similar">
+<span class="similar-link" style="cursor: default; border: none; box-shadow: none;">
+<h5>University of Washington</h5>
+<span>Master of Science in Data Science</span>
+</span>
+</div>
+<div class="skills-content">
+<span class="tech-pill">Python</span>
+<span class="tech-pill">R</span>
+<span class="tech-pill">Statistics</span>
+<span class="tech-pill">Data Visualization</span>
+<span class="tech-pill">Machine Learning</span>
+<span class="tech-pill">Data Management</span>
+<span class="tech-pill">Generative AI</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 </main>
 <footer class="reveal">
 <h2>Get In Touch</h2>
@@ -386,6 +437,31 @@
 </div>
 <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #64748b;">© 2026 Paarth Kapur. All rights reserved.</p>
 </footer>
+</div>
+
+<div class="modal-overlay" id="eduModal" onclick="closeEduModal(event)">
+<div class="modal-content" onclick="event.stopPropagation()">
+<span class="close-btn" onclick="closeEduModalBtn()">×</span>
+<div style="display: flex; align-items: center; gap: 1.5rem;">
+<div class="card-logo" id="eduModalLogo" style="width: 70px; height: 70px; flex-shrink: 0; background: #fff; border: 1px solid #e2e8f0;"></div>
+<div>
+<h2 class="modal-title" id="eduModalTitle" style="margin: 0; padding: 0;">Title</h2>
+<h4 id="eduModalCompany" style="color: #64748b; margin: 0.3rem 0 0 0; font-weight: 500;">Company</h4>
+</div>
+</div>
+<div class="modal-body-grid">
+<div class="project-story" id="eduModalStory"></div>
+<div class="modal-sidebar">
+<div class="sidebar-group">
+<div class="sidebar-title">Associated Projects</div>
+<div id="eduModalSimilar"></div>
+</div>
+<div class="sidebar-group" id="eduModalSkillsSection" style="margin-top: 1.5rem;">
+<div class="sidebar-title">Skills &amp; Tools</div>
+<div id="eduModalSkills"></div> </div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="modal-overlay" id="skillModal" onclick="closeModal(event)">
@@ -502,5 +578,38 @@
             "retina_detect": true
         });
     </script>
+
+    <script>
+        function openEduModal(card) {
+            document.getElementById('eduModalTitle').innerText = card.querySelector('h3').innerText;
+            document.getElementById('eduModalCompany').innerText = card.querySelector('.company').innerText;
+            document.getElementById('eduModalLogo').innerHTML = card.querySelector('.card-logo').innerHTML;
+            const hidden = card.querySelector('.hidden-details');
+            if (hidden) {
+                document.getElementById('eduModalStory').innerHTML = hidden.querySelector('.story') ? hidden.querySelector('.story').innerHTML : '';
+                document.getElementById('eduModalSimilar').innerHTML = hidden.querySelector('.similar') ? hidden.querySelector('.similar').innerHTML : '';
+                const skills = hidden.querySelector('.skills-content');
+                document.getElementById('eduModalSkillsSection').style.display = skills ? 'block' : 'none';
+                if (skills) document.getElementById('eduModalSkills').innerHTML = '<div class="skills-container">' + skills.innerHTML + '</div>';
+            } else {
+                document.getElementById('eduModalStory').innerHTML = '<p>No further details available.</p>';
+                document.getElementById('eduModalSimilar').innerHTML = '<span>No projects linked.</span>';
+                document.getElementById('eduModalSkillsSection').style.display = 'none';
+            }
+            const modal = document.getElementById('eduModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('show'); }, 10);
+        }
+        function closeEduModal(event) { if (event.target.id === 'eduModal') closeEduModalAction(); }
+        function closeEduModalBtn() { closeEduModalAction(); }
+        function closeEduModalAction() {
+            const modal = document.getElementById('eduModal');
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => { modal.style.display = 'none'; }, 300);
+            }
+        }
+    </script>
+
 </body>
 </html>

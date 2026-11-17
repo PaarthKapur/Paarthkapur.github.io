@@ -96,6 +96,45 @@ h1, h2, h3 {
   text-align: justify;
 }
 
+/* Hero: text left, circular portrait right */
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.hero-photo {
+  flex: 0 0 auto;
+}
+
+.hero-photo img {
+  display: block;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--bg-color);
+  box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hero-photo img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 .btn {
   display: inline-block;
   padding: 0.65rem 1.3rem;
@@ -130,7 +169,7 @@ h1, h2, h3 {
   }
 }
 
-#about h2, #skills h2 {
+#about h2, #skills h2, .education-section h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -143,6 +182,64 @@ h1, h2, h3 {
   line-height: 1.7;
   margin-bottom: 1.25rem;
   text-align: justify;
+}
+
+/* Education card inside About Me */
+.about-edu {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-top: 0.25rem;
+}
+
+.about-edu-body { flex-grow: 1; min-width: 0; }
+
+.about-edu .card-header { margin-bottom: 0.35rem; gap: 0.5rem; }
+
+.about-edu .card-header h3 { font-size: 1.15rem; }
+
+.about-edu .company { font-size: 0.98rem; margin-bottom: 0.15rem; }
+
+/* Standalone Education section */
+.education-section {
+  margin-top: 3rem;
+}
+
+.about-edu {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-edu:hover {
+  border-color: #0082d8;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.education-section .about-edu .location {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: left;
+  color: #64748b;
+}
+
+.education-section .about-edu .description {
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: left;
+  color: #4a5568;
+}
+
+@media (min-width: 992px) {
+  .about-edu { padding: 1rem 1.1rem; }
 }
 
 /* Skills Grid & Cards */
@@ -540,6 +637,33 @@ h1, h2, h3 {
   margin-bottom: 0.75rem;
 }
 
+/* Related links in every pop-up, including Experience and Projects. */
+.modal-content a.similar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-color);
+  color: var(--primary-blue);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content a.similar-link:hover,
+.modal-content a.similar-link:focus-visible {
+  border-color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.modal-content .similar-link h5 { margin: 0; font-size: 0.92rem; }
+.modal-content .similar-link > span { font-size: 0.8rem; color: var(--text-muted); }
+.modal-content { box-sizing: border-box; }
+
 /* Footer */
 footer {
   margin-top: 4rem;
@@ -573,3 +697,43 @@ footer a:hover {
   .timeline-card { flex-direction: column; gap: 1rem; }
   .modal-content { padding: 1.5rem; width: 95%; }
 }
+/* Filter / tab buttons (Experience + Projects) */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0 0 2rem 0;
+}
+
+.filter-btn {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1.15rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.filter-btn.active {
+  background: var(--primary-blue);
+  color: #ffffff;
+  border-color: var(--primary-blue);
+}
+
+/* Keep pages within the screen width */
+.container { box-sizing: border-box; width: auto; overflow-wrap: anywhere; }
+.page-header h2 { text-align: center; }
+header { flex-wrap: wrap; gap: 0.75rem; }
+nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+nav a { margin-left: 0; }
+.timeline-card, .card-content { min-width: 0; }

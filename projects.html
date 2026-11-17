@@ -12,7 +12,7 @@
 
 <div class="side-left reveal">
 <a href="https://www.linkedin.com/in/paarth-kapur-7b352a201" target="_blank" title="LinkedIn">in</a>
-<a href="#" target="_blank" title="GitHub">gh</a>
+<a href="https://github.com/PaarthKapur" target="_blank" rel="noopener noreferrer" title="GitHub">gh</a>
 </div>
 <div class="side-right reveal">
 <a class="vertical-text" href="mailto:paarthkapur@gmail.com">paarthkapur@gmail.com</a>
@@ -41,6 +41,38 @@
 <button class="filter-btn" onclick="filterProjects('volunteering', event)">Volunteering</button>
 </div>
 <div class="projects-grid">
+<div class="project-card reveal" data-category="independent" id="dax-query-generator" onclick="openModal(this)">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
+<div>
+<span class="project-label" style="display: block; margin-bottom: 0.5rem;">Independent • 2026</span>
+<h3 style="margin: 0;">DAX Query Generator: Natural Language to DAX with LLMs</h3>
+</div>
+<div class="card-logo" style="width: 50px; height: 50px; flex-shrink: 0; font-weight: bold; font-size: 0.8rem; background-color: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">AI</div>
+</div>
+<ul>
+<li>Built an LLM-powered tool that converts plain-English business questions into DAX measures for Power BI, using schema-aware prompting over tables, relationships, and existing measures.</li>
+<li>Added embedding-based retrieval of similar question-DAX examples (RAG) to ground the model's output in the semantic model's conventions.</li>
+</ul>
+<div class="tech-pills">
+<span class="tech-pill">Python</span>
+<span class="tech-pill">LLM APIs</span>
+<span class="tech-pill">RAG</span>
+<span class="tech-pill">Power BI</span>
+<span class="tech-pill">DAX</span>
+<span class="tech-pill">Prompt Engineering</span>
+</div>
+<div class="hidden-details">
+<div class="story">
+<h4>The Problem</h4>
+<p>Writing correct DAX measures in Power BI requires deep knowledge of the semantic model — its tables, relationships, and existing measures — which slows down analysts and business users who just want answers in plain English.</p>
+<h4>The Solution</h4>
+<p>I built an LLM-powered tool that converts plain-English business questions into ready-to-use DAX measures. It uses schema-aware prompting over the model's tables, relationships, and existing measures, plus embedding-based retrieval (RAG) of similar question-DAX examples so the generated code follows the semantic model's own conventions.</p>
+</div>
+<div class="similar">
+<a class="similar-link" href="projects.html#tata-sentiment"><h5>Customer Sentiment NLP</h5><span>Applied AI</span></a>
+</div>
+</div>
+</div>
 <div class="project-card" data-category="professional" id="tata-profitability" onclick="openModal(this)">
 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.2rem;">
 <div>
@@ -68,8 +100,8 @@
 <p>I automated the entire profitability workflow using Spoon (Pentaho) and optimized SQL scripts. This reduced reporting time by 75% and allowed us to recover revenue from nearly 800,000 customers by accurately identifying recoverable payment failures.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('tata-sentiment')"><h5>Customer Sentiment NLP</h5><span>Same Company</span></div>
-<div class="similar-link" onclick="jumpToProject('tata-churn')"><h5>Predictive Churn AI</h5><span>Same Company</span></div>
+<a class="similar-link" href="projects.html#tata-sentiment"><h5>Customer Sentiment NLP</h5><span>Same Company</span></a>
+<a class="similar-link" href="projects.html#tata-churn"><h5>Predictive Churn AI</h5><span>Same Company</span></a>
 </div>
 </div>
 </div>
@@ -100,8 +132,8 @@
 <p>I built a dual-classification NLP model using TF-IDF and SVM. It automatically tagged reviews by 'Issue Type' and 'Sentiment', piping data into Power BI for real-time operational visibility.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('tata-profitability')"><h5>Enterprise Profitability</h5><span>Same Company</span></div>
-<div class="similar-link" onclick="jumpToProject('explainable-ai')"><h5>Explainable AI</h5><span>Machine Learning</span></div>
+<a class="similar-link" href="projects.html#tata-profitability"><h5>Enterprise Profitability</h5><span>Same Company</span></a>
+<a class="similar-link" href="projects.html#explainable-ai"><h5>Explainable AI</h5><span>Machine Learning</span></a>
 </div>
 </div>
 </div>
@@ -131,8 +163,8 @@
 <p>I developed a predictive ensemble model to forecast which accounts were truly 'at-risk'. This allowed the marketing team to focus 100% of their retention budget on genuine churn cases.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('tata-profitability')"><h5>Enterprise Profitability</h5><span>Same Company</span></div>
-<div class="similar-link" onclick="jumpToProject('customer-segmentation')"><h5>Customer Segmentation</h5><span>Similar Tech</span></div>
+<a class="similar-link" href="projects.html#tata-profitability"><h5>Enterprise Profitability</h5><span>Same Company</span></a>
+<a class="similar-link" href="projects.html#customer-segmentation"><h5>Customer Segmentation</h5><span>Similar Tech</span></a>
 </div>
 </div>
 </div>
@@ -163,7 +195,7 @@
 <p>I engineered a 'Stock Availability Report' in Snowflake, using complex SQL to blend real-time sales with inventory thresholds. It created a single source of truth for supply chain planners.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('tata-profitability')"><h5>Enterprise Profitability</h5><span>Data Engineering</span></div>
+<a class="similar-link" href="projects.html#tata-profitability"><h5>Enterprise Profitability</h5><span>Data Engineering</span></a>
 </div>
 </div>
 </div>
@@ -194,8 +226,8 @@
 <p>I built a Flask app powered by a custom CNN that could detect specific Regions of Interest (ROI) on ID cards regardless of orientation, automating security compliance.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('solar-anomaly')"><h5>Solar Panel Anomaly</h5><span>Computer Vision</span></div>
-<div class="similar-link" onclick="jumpToProject('lung-cancer')"><h5>Lung Cancer Detection</h5><span>Deep Learning</span></div>
+<a class="similar-link" href="projects.html#solar-anomaly"><h5>Solar Panel Anomaly</h5><span>Computer Vision</span></a>
+<a class="similar-link" href="projects.html#lung-cancer"><h5>Lung Cancer Detection</h5><span>Deep Learning</span></a>
 </div>
 </div>
 </div>
@@ -225,8 +257,8 @@
 <p>I implemented Layer-wise Relevance Propagation (LRP) on VGG16. This generated heatmaps showing exactly which pixels influenced the decision, making the AI transparent and clinically verifiable.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('lung-cancer')"><h5>Lung Cancer Detection</h5><span>Medical AI</span></div>
-<div class="similar-link" onclick="jumpToProject('swin-transformer')"><h5>Swin Transformers</h5><span>Deep Learning</span></div>
+<a class="similar-link" href="projects.html#lung-cancer"><h5>Lung Cancer Detection</h5><span>Medical AI</span></a>
+<a class="similar-link" href="projects.html#swin-transformer"><h5>Swin Transformers</h5><span>Deep Learning</span></a>
 </div>
 </div>
 </div>
@@ -256,7 +288,7 @@
 <p>I developed an optimized EfficientNetB3 model that outperformed heavier architectures like ResNet50, achieving 94.29% accuracy while being computationally efficient enough for rapid deployment.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('explainable-ai')"><h5>Explainable Neural Networks</h5><span>Medical AI</span></div>
+<a class="similar-link" href="projects.html#explainable-ai"><h5>Explainable Neural Networks</h5><span>Medical AI</span></a>
 </div>
 </div>
 </div>
@@ -286,7 +318,7 @@
 <p>I stress-tested Swin Transformers against CNNs under simulated harsh conditions. The Transformers' global context awareness allowed them to 'see through' the noise, proving superior for safety-critical autonomous systems.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('solar-anomaly')"><h5>Solar Panel Anomaly</h5><span>Computer Vision</span></div>
+<a class="similar-link" href="projects.html#solar-anomaly"><h5>Solar Panel Anomaly</h5><span>Computer Vision</span></a>
 </div>
 </div>
 </div>
@@ -316,7 +348,7 @@
 <p>I built a CNN model using ResNet50 as a feature extractor. By preprocessing thermal images with thresholding, the model could pinpoint defects with high precision, automating the maintenance pipeline.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('wetland-classification')"><h5>Wetland Classification</h5><span>Remote Sensing</span></div>
+<a class="similar-link" href="projects.html#wetland-classification"><h5>Wetland Classification</h5><span>Remote Sensing</span></a>
 </div>
 </div>
 </div>
@@ -346,7 +378,7 @@
 <p>I applied NDVI analysis on Landsat 8 data to distinguish wetlands from drylands. Using stratified random sampling, I validated the model to 89% accuracy, enabling better environmental monitoring.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('solar-anomaly')"><h5>Solar Panel Anomaly</h5><span>Image Processing</span></div>
+<a class="similar-link" href="projects.html#solar-anomaly"><h5>Solar Panel Anomaly</h5><span>Image Processing</span></a>
 </div>
 </div>
 </div>
@@ -376,7 +408,7 @@
 <p>I built a robust data cleaning pipeline using Google Earth Engine and QGIS. By standardizing and preprocessing large datasets, I ensured high data integrity, which enabled precise downstream spatial analysis and effective visualization.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('wetland-classification')"><h5>Wetland Classification</h5><span>Remote Sensing</span></div>
+<a class="similar-link" href="projects.html#wetland-classification"><h5>Wetland Classification</h5><span>Remote Sensing</span></a>
 </div>
 </div>
 </div>
@@ -406,7 +438,7 @@
 <p>I leveraged Neo4j to model these relationships as a graph database. Using Bokeh, I created dynamic, interactive visualizations that allowed users to explore the connectivity between various websites intuitively.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('customer-segmentation')"><h5>Customer Segmentation</h5><span>Data Analysis</span></div>
+<a class="similar-link" href="projects.html#customer-segmentation"><h5>Customer Segmentation</h5><span>Data Analysis</span></a>
 </div>
 </div>
 </div>
@@ -436,7 +468,7 @@
 <p>I designed a friendly, anonymous platform that removed the friction of booking appointments. The addition of 'Story Sharing' created a community of support, making mental health resources accessible and less intimidating.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('bus-booking')"><h5>Bus Booking System</h5><span>Web Development</span></div>
+<a class="similar-link" href="projects.html#bus-booking"><h5>Bus Booking System</h5><span>Web Development</span></a>
 </div>
 </div>
 </div>
@@ -466,7 +498,7 @@
 <p>I built a clustering pipeline using K-Means to segment customers based on purchasing behavior. This enabled personalized marketing strategies for different groups, from 'Loyalists' to 'At-Risk'.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('tata-churn')"><h5>Predictive Churn AI</h5><span>Business Analytics</span></div>
+<a class="similar-link" href="projects.html#tata-churn"><h5>Predictive Churn AI</h5><span>Business Analytics</span></a>
 </div>
 </div>
 </div>
@@ -496,7 +528,7 @@
 <p>I digitized their tracking system. By analyzing adoption and medical data, we optimized resource allocation, ensuring the limited funds went where they could save the most lives.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('ngo-healthcare')"><h5>Healthcare Outreach</h5><span>Data for Good</span></div>
+<a class="similar-link" href="projects.html#ngo-healthcare"><h5>Healthcare Outreach</h5><span>Data for Good</span></a>
 </div>
 </div>
 </div>
@@ -525,7 +557,7 @@
 <p>I implemented an impact evaluation framework. By analyzing patient turnout and service usage, I provided the NGO with insights to better target their future medical camps.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('rotary-shelter')"><h5>Animal Shelter Analysis</h5><span>Data for Good</span></div>
+<a class="similar-link" href="projects.html#rotary-shelter"><h5>Animal Shelter Analysis</h5><span>Data for Good</span></a>
 </div>
 </div>
 </div>
@@ -555,7 +587,7 @@
 <p>I designed a curriculum for Python and Excel basics. Teaching these interactive sessions helped bridge the digital divide, giving students tangible skills for their future careers.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('counseling-app')"><h5>Counseling Platform</h5><span>Community Impact</span></div>
+<a class="similar-link" href="projects.html#counseling-app"><h5>Counseling Platform</h5><span>Community Impact</span></a>
 </div>
 </div>
 </div>
@@ -586,7 +618,7 @@
 <p>I built a full-stack Flask application with a dynamic frontend. The interactive seat selection and automated fare engine created a seamless user experience comparable to modern travel apps.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('bakery-website')"><h5>Bakery Website</h5><span>Web Development</span></div>
+<a class="similar-link" href="projects.html#bakery-website"><h5>Bakery Website</h5><span>Web Development</span></a>
 </div>
 </div>
 </div>
@@ -616,7 +648,7 @@
 <p>I developed a secure, REST API-driven website that handled everything from user authentication to automated email confirmations, providing a complete digital storefront.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('bus-booking')"><h5>Bus Booking System</h5><span>Web Development</span></div>
+<a class="similar-link" href="projects.html#bus-booking"><h5>Bus Booking System</h5><span>Web Development</span></a>
 </div>
 </div>
 </div>
@@ -645,7 +677,7 @@
 <p>I implemented K-Means clustering to mathematically determine the most 'dominant' colors in an image. This allowed me to reconstruct the image using a significantly smaller palette with minimal visual loss.</p>
 </div>
 <div class="similar">
-<div class="similar-link" onclick="jumpToProject('customer-segmentation')"><h5>Customer Segmentation</h5><span>Clustering Algorithms</span></div>
+<a class="similar-link" href="projects.html#customer-segmentation"><h5>Customer Segmentation</h5><span>Clustering Algorithms</span></a>
 </div>
 </div>
 </div>
@@ -843,5 +875,29 @@
             "retina_detect": true
         });
     </script>
+
+<script>
+function openLinkedProject() {
+    const card = document.getElementById(location.hash.slice(1));
+    if (!card || !card.matches('.project-card')) return;
+    document.querySelectorAll('.project-card').forEach(item => item.style.display = 'flex');
+    document.querySelectorAll('.filter-btn').forEach((button, index) => button.classList.toggle('active', index === 0));
+    card.classList.add('active');
+    card.scrollIntoView({block: 'center'});
+    openModal(card);
+}
+window.addEventListener('hashchange', openLinkedProject);
+document.addEventListener('click', function(event) {
+    const link = event.target.closest('a.similar-link');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    const url = new URL(link.href);
+    if (url.pathname !== location.pathname || !url.hash) return;
+    event.preventDefault();
+    history.pushState(null, '', url.hash);
+    openLinkedProject();
+}, true);
+setTimeout(openLinkedProject, 150);
+</script>
+
 </body>
 </html>
